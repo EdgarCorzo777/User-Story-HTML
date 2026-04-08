@@ -3,3 +3,47 @@
 
 }
 
+.hipervinculo {
+    text-decoration: none;
+    color: #fff;
+    background-color: black;
+    padding: 7px 10px;
+    border-radius: 5px;
+}
+
+.hipervinculo:hover {
+    background-color: #c4e9e7;
+    color: hsl(207, 52%, 40%);
+}
+
+.titulo {
+    color: #fff;
+    text-shadow: 
+      0 0 5px #ff00ff,
+      0 0 10px #ff00ff,
+      0 0 20px #ff00ff,
+      0 0 40px #ff00ff;
+      background-color: black;
+      padding: 5px 10px;
+      border-radius: 5px;
+}
+
+body {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 20;
+    font-style: normal;
+}
+
+img {
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px black;
+
+
+}
+
+
+img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
