@@ -1,107 +1,255 @@
-/* Reset general - elimina márgenes y padding por defecto del navegador */
+/* Global color and typography variables */
+:root {
+    --color-background: #f9f9f9;
+    --color-header: #111111;
+    --color-card: #ffffff;
+    --color-title: #111111;
+    --color-button: #111111;
+    --color-text: #333333;
+    --main-font: "IBM Plex Serif", serif;
+}
+
+/* General reset - removes default margins and padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Header - flexbox para distribuir el título y la navegación horizontalmente */
+/* General body styles */
+body {
+    font-family: var(--main-font);
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 1rem;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+/* Header - flexbox to distribute title and navigation */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #D3D3D3;
+    background-color: var(--color-header);
     width: 100%;
-    padding: 10px 20px;
+    padding: 16px 32px;
+    position: sticky;
+    top: 0;
 }
 
-/* Nav - flexbox para alinear los enlaces en fila con espacio entre ellos */
+/* Header title - white text */
+header h1 {
+    color: #ffffff;
+}
+
+/* Responsive font sizes */
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+
+/* Nav - flexbox to align links in a row */
 nav {
     display: flex;
-    gap: 12px;
+    gap: 24px;
 }
 
-/* Enlaces del nav - sin subrayado */
+/* Nav links - white on dark header */
 nav a {
     text-decoration: none;
+    color: #ffffff;
+    font-size: 0.95rem;
 }
 
-/* Sección de proyectos - grid de 3 columnas iguales */
-.proyectos-grid {
+/* Nav links - hover effect */
+nav a:hover {
+    color: #aaaaaa;
+}
+
+/* Sections - generous spacing */
+main section {
+    padding: 48px 32px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+/* Section titles */
+.title {
+    color: #ffffff;
+    background-color: var(--color-title);
+    padding: 6px 14px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* About me paragraph */
+#description {
+    max-width: 700px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+/* General buttons */
+.btn {
+    background-color: var(--color-button);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--main-font);
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+/* Button hover effect */
+.btn:hover {
+    background-color: #333333;
+}
+
+/* Project card button */
+.card-btn {
+    display: inline-block;
+    margin-top: 12px;
+    text-decoration: none;
+    background-color: var(--color-button);
+    color: #ffffff;
+    padding: 7px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-family: var(--main-font);
+}
+
+/* Project card button hover */
+.card-btn:hover {
+    background-color: #333333;
+}
+
+/* Projects grid - 4 equal columns */
+.projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    padding: 20px;
+    margin-top: 10px;
 }
 
-/* Tarjeta individual de proyecto */
-.tarjeta {
-    background-color: #E6E6FA;
-    padding: 18px;
-    border-radius: 25px;
+/* Cards - shared styles for projects and pets */
+.card,
+.pet-card {
+    background-color: var(--color-card);
+    padding: 24px 18px;
+    border-radius: 16px;
     text-align: center;
+    border: 1px solid #dddddd;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.06);
 }
 
-/* Galería de mascotas - grid de 3 columnas iguales */
-.galeria {
+/* Pet card - extra shadow */
+.pet-card {
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.10);
+}
+
+/* Contact form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 400px;
+    margin-top: 16px;
+}
+
+/* Form labels */
+form label {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    margin-bottom: 4px;
+    display: block;
+}
+
+/* Form inputs */
+form input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-family: var(--main-font);
+    font-size: 0.9rem;
+    background-color: #ffffff;
+}
+
+/* Form input focus */
+form input:focus {
+    outline: none;
+    border-color: #111111;
+}
+
+/* Pets gallery - 3 equal columns */
+.gallery {
     padding: 25px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
-/* Imágenes de la galería - tamaño uniforme con recorte */
-.galeria img {
+/* Gallery images - uniform size with crop */
+.gallery img {
     width: 100%;
     height: 250px;
     object-fit: cover;
 }
 
-/* Botón de hipervínculo - estilo de enlace como botón */
-.hipervinculo {
-    text-decoration: none;
-    color: #fff;
-    background-color: black;
-    padding: 7px 10px;
-    border-radius: 5px;
-}
-
-/* Hipervínculo - efecto hover */
-.hipervinculo:hover {
-    background-color: #202424;
-    color: hsl(207, 52%, 40%);
-}
-
-/* Títulos de sección - estilo con fondo de color */
-.titulo {
-    color: #fff;
-    background-color: #C5E0DC;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-/* Estilos generales del cuerpo - fuente pixelada */
-body {
-    font-family: "Pixelify Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 20;
-    font-style: normal;
-}
-
-/* Imágenes generales - bordes redondeados y sombra */
+/* General images - rounded corners and shadow */
 img {
     border-radius: 10px;
-    box-shadow: 0px 0px 5px black;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.15);
+    max-width: 100%;
+    height: auto;
 }
 
-/* Imágenes - efecto de zoom al hacer hover */
+/* Images - zoom effect on hover */
 img:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
 
-/* Fondo del cuerpo - imagen de fondo */
-body{
-    background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/pixel-heart.png");
+/* Link button */
+.link-btn {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: var(--color-button);
+    padding: 7px 10px;
+    border-radius: 5px;
+}
 
+/* Link button hover */
+.link-btn:hover {
+    background-color: #333333;
+    color: #aaaaaa;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 32px;
+    background-color: var(--color-header);
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+/* Media query - mobile */
+@media (max-width: 480px) {
+    nav { flex-direction: column; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+    main section { padding: 32px 16px; }
+    footer { flex-direction: column; gap: 12px; }
+}
+
+/* Media query - tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery { grid-template-columns: repeat(3, 1fr); }
 }

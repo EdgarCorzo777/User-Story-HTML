@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pagina Principal</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Main Page</title>
+    <link rel="stylesheet" href="style.min.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -15,63 +15,91 @@
     <header>
       <h1>Edgar Corzo</h1>
       <nav>
-        <a href="#">Sobre mi</a>
-        <a href="#">Proyectos</a>
-        <a href="#">Contacto</a>
+        <a href="#about">About me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main>
-      <section>
-        <h2 class="titulo">Sobre mi</h2>
-        <p>
-          Hola mundo, mi nombre es Edgar David Corzo Londoño, tengo 22 años y
-          soy un programador en proceso, estoy aprendiendo Desarrollo de
-          Software en Riwi. Estoy disfrutando mucho este nuevo reto y voy a dar
-          lo mejor de mí. 🤖 Apasionado por la IA. 👾 Jugador empedernido. ⚽
-          Apasionado por el fútbol y las series de televisión. 🎮 En mi tiempo
-          libre juego a Resident Evil 4 y practico mi lógica de programación.
+      <section id="about">
+        <h2 class="title">About me</h2>
+        <p id="description">
+          Hello world, my name is Edgar David Corzo Londoño, I'm 22 years old
+          and I'm a programmer in progress, learning Software Development at
+          Riwi. I'm really enjoying this new challenge and I'll give my best. 🤖
+          Passionate about AI. 👾 Hardcore gamer. ⚽ Football and TV series
+          enthusiast. 🎮 In my free time I play Resident Evil 4 and practice my
+          programming logic.
         </p>
+        <button class="btn" id="btnToggle">Read more</button>
       </section>
 
-      <section>
-        <h2 class="titulo">Proyectos</h2>
-
-        <div class="proyectos-grid">
-          <div class="tarjeta">
-            <h3>Facebook</h3>
-            <a href="https://facebook.com" target="_blank">Visitar</a>
+      <section id="projects">
+        <h2 class="title">Projects</h2>
+        <div class="projects-grid">
+          <div class="card">
+            <h3>Grade Calculator</h3>
+            <a
+              class="card-btn"
+              href="https://github.com/EdgarCorzo777/CalculadorDeNotas"
+              target="_blank"
+              >Visit</a
+            >
           </div>
-          <div class="tarjeta">
-            <h3>Twitter</h3>
-            <a href="https://twitter.com" target="_blank">Visitar</a>
+          <div class="card">
+            <h3>Basic Sales Record</h3>
+            <a
+              class="card-btn"
+              href="https://github.com/EdgarCorzo777/RegistroDeVentasBasico"
+              target="_blank"
+              >Visit</a
+            >
           </div>
-          <div class="tarjeta">
-            <h3>Instagram</h3>
-            <a href="https://instagram.com" target="_blank">Visitar</a>
+          <div class="card">
+            <h3>Inventory Management</h3>
+            <a
+              class="card-btn"
+              href="https://github.com/EdgarCorzo777/Inventory-Management"
+              target="_blank"
+              >Visit</a
+            >
+          </div>
+          <div class="card">
+            <h3>Junior's Stats</h3>
+            <a
+              class="card-btn"
+              href="https://github.com/EdgarCorzo777/EstadisticasDelJuju"
+              target="_blank"
+              >Visit</a
+            >
           </div>
         </div>
       </section>
 
-      <section>
-        <h2 class="titulo">Contacto</h2>
-
-        <form action="index.html" method="get">
-          <label for="">Nombre</label>
-          <input type="text" placeholder="Ingrese su nombre" /><br /><br />
-          <label for="">Numero</label>
-          <input type="number" placeholder="Ingrese su numero" /><br /><br />
-          <label for="">Correo</label>
-          <input type="email" placeholder="Ingrese su correo" /><br /><br />
-
-          <button type="submit">Enviar</button>
+      <section id="contact">
+        <h2 class="title">Contact</h2>
+        <button class="btn" id="btnForm">Show form</button>
+        <form id="form" action="index.html" method="get" style="display: none">
+          <label for="name">Name:</label>
+          <input id="name" type="text" placeholder="Enter your name" />
+          <label for="phone">Phone:</label>
+          <input
+            id="phone"
+            type="number"
+            placeholder="Enter your phone number"
+          />
+          <label for="email">Email:</label>
+          <input id="email" type="email" placeholder="Enter your email" />
+          <button class="btn" type="submit">Send</button>
         </form>
       </section>
     </main>
 
     <footer>
-      <br />
-      <a class="hipervinculo" href="mascotas.html">Ir a mascotas</a>
+      <p>© 2026 Edgar Corzo</p>
+      <a class="link-btn" href="pets.html">Go to pets</a>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
